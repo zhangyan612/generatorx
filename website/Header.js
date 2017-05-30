@@ -75,7 +75,6 @@ class Header extends React.Component {
   componentDidMount() {
     this.getBrowserIcon();
 
-    this.getLastCommit();
 
     // animation priority
     setTimeout(() => {
@@ -83,7 +82,6 @@ class Header extends React.Component {
       this.facebookSdk();
       this.googleSdk();
       this.githubSdk();
-      this.loadCarbonAds();
     }, 1200);
 
      // this.renderConnectedDots();
@@ -104,17 +102,6 @@ class Header extends React.Component {
     });
   }
 
-  loadCarbonAds() {
-    let carbonAdsContainer = this.refs.carbonAds;
-    let script = document.createElement('script');
-    script.async = true;
-    script.defer = true;
-    script.type = 'text/javascript';
-    script.src = '//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=megaboilerplatecom';
-    script.id = '_carbonads_js';
-    carbonAdsContainer.appendChild(script);
-    ga('send', 'event', 'Mega Boilerplate', 'Carbon Ads', 'Loaded');
-  }
 
   twitterSdk() {
     window.twttr = (function(d, s, id) {
@@ -253,19 +240,6 @@ class Header extends React.Component {
     setInterval(createDots, 1000 / 30);
   }
 
-  getLastCommit() {
-    $.get('https://api.github.com/repos/sahat/megaboilerplate/commits', (data) => {
-      if (data && data.length) {
-        const commit = data[0].commit;
-        const date = commit.author.date;
-
-        if (date) {
-          this.setState({ latestCommit: timeSince(new Date(date)) + ' ago' });
-        }
-      }
-    });
-  }
-
   getBrowserIcon() {
     const isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
     const isFirefox = typeof InstallTrigger !== 'undefined';
@@ -294,11 +268,6 @@ class Header extends React.Component {
   }
 
   render() {
-    const latestCommit = this.state.latestCommit ? (
-      <VelocityComponent runOnMount animation="transition.fadeIn" duration={1000}>
-        <div style={{ opacity: 0 }} className="footnote right">Latest commit: <span className="time-ago"><a href="https://github.com/sahat/megaboilerplate/commits/master" target="_blank">{this.state.latestCommit}</a></span></div>
-      </VelocityComponent>
-    ) : null;
 
     return (
       <header className="hero">
@@ -308,7 +277,7 @@ class Header extends React.Component {
             <div className="navbar-header">
               <a href="/" className="navbar-brand">
                 {BRAND_LOGO}
-                <span><strong>Mega</strong> Boilerplate</span>
+                <span><strong>Generator</strong>  X</span>
               </a>
             </div>
             <div id="navbar" className="navbar-collapse collapse">
@@ -351,7 +320,6 @@ class Header extends React.Component {
                 Featuring <span style={{ color: '#fff' }} ref="heroHeading"/>
               </div>
             </VelocityComponent>
-            <button type="button" className="btn btn-outline" data-toggle="modal" data-target="#demosModal"><i className={'fa fa-' + this.state.browserIcon}/> Live Demo</button> <a href="https://github.com/sahat/megaboilerplate/tree/master/examples" target="_blank" className="btn btn-outline">Code Examples</a>
           </div>
 
 

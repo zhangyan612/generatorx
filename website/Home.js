@@ -527,9 +527,6 @@ class Home extends React.Component {
           </div>
         </li>
         <li className="pull-right">
-          <div className="checkbox">
-            <a href="https://www.codementor.io/sahatyalkabov?utm_source=github&utm_medium=button&utm_term=sahatyalkabov&utm_campaign=github" target="_blank"><img src="https://cdn.codementor.io/badges/book_session_github.svg" alt="Book session on Codementor"/></a>
-          </div>
         </li>
       </ul>
     );
