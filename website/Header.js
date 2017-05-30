@@ -313,31 +313,18 @@ class Header extends React.Component {
             </div>
             <div id="navbar" className="navbar-collapse collapse">
               <ul className="nav navbar-nav navbar-right">
-                <li className="tweet-button">
-                  <a className="twitter-share-button" href="https://twitter.com/intent/tweet?text=🔥 Mega Boilerplate ★ Handcrafted starter projects, optimized for simplicity and ease of use by @EvNowAndForever." />
-                </li>
-
-                <li className="facebook-like-button">
-                  <div className="fb-like" data-href="http://megaboilerplate.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-                </li>
-
-                <li className="facebook-share-button">
-                  <div className="fb-share-button" data-href="http://megaboilerplate.com" data-layout="button_count"></div>
-                </li>
-
-                <li className="linkedin-button">
-                  <script type="IN/Share" data-counter="right"></script>
-                </li>
-
-                <li className="plusone-button">
-                  <div className="g-plusone" data-size="medium" data-href="http://megaboilerplate.com"></div>
+                <li>
+                  <a>Some projects</a>
                 </li>
 
                 <li>
-                  <a href="https://github.com/sahat/megaboilerplate" className="navbar-icon">
-                    <i className="fa fa-github"></i>
-                  </a>
+                  <a>Another projects</a>
                 </li>
+
+                <li>
+                  <a>Third projects</a>
+                </li>
+
               </ul>
             </div>
           </div>
@@ -352,7 +339,7 @@ class Header extends React.Component {
 
           <VelocityComponent runOnMount animation="transition.slideDownIn" duration={1200}>
             <h1>
-              <strong>Mega</strong> Boilerplate
+              Generator <strong>X</strong>
             </h1>
           </VelocityComponent>
           <div className="lead">
@@ -367,17 +354,7 @@ class Header extends React.Component {
             <button type="button" className="btn btn-outline" data-toggle="modal" data-target="#demosModal"><i className={'fa fa-' + this.state.browserIcon}/> Live Demo</button> <a href="https://github.com/sahat/megaboilerplate/tree/master/examples" target="_blank" className="btn btn-outline">Code Examples</a>
           </div>
 
-          <iframe src="https://ghbtns.com/github-btn.html?user=sahat&repo=megaboilerplate&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="160px" height="30px"></iframe>
 
-          <div className="visible-lg">
-            <img className="hero-arrow" src="https://megaboilerplate.blob.core.windows.net/megaboilerplate/img/arrow.png" alt="Arrow"/>
-            <span>Don't forget to <i className="fa fa-star"/> on GitHub if you liked this project!</span>
-          </div>
-
-          <div ref="carbonAds"></div>
-
-          <div className="footnote left">¹ Inspired by <a href="https://github.com/sahat/hackathon-starter" target="_blank">Hackathon Starter</a></div>
-          {latestCommit}
         </div>
       </header>
     );
